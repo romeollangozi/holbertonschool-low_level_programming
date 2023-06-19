@@ -3,11 +3,11 @@
 #include <time.h>
 /* more headers goes there */
 
-/*
-*Main function below it picks a random number and stores
-*it in variable n and using if else statements
-*we print out if it is negative positive or zero
-*/
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
