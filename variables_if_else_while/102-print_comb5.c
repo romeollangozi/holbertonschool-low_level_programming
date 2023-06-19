@@ -25,7 +25,8 @@ putchar(j);
 putchar(' ');
 putchar(k);
 putchar(m);
-if (i+j+k+m <= 226){
+if (i + j + k + m <= 226)
+{
 putchar(',');
 putchar(' ');
 }
@@ -36,4 +37,4 @@ putchar(' ');
 }
 putchar('\n');
 return (0);
-}       
+}
