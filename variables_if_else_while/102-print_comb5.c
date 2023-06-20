@@ -7,25 +7,25 @@
 int main(void)
 {
 
-int i, j, k, m;
+int i, j, k, m, tk, tm;
 
-for (i = 48; i < 58; i++)
+for (i = 0; i < 10; i++)
 {
-for (j = 48; j < 58 ; j++)
+for (j = 0; j < 10 ; j++)
 {
 
-for (k = 48; k < 58; k++)
+for (k = 0; k < 10; k++)
 {
-for (m = 48; m < 58; m++)
+for (m = 0; m < 10; m++)
 {
-if ((i + j < m + k))
+if (i <= k && j < m)
 {
-putchar(i);
-putchar(j);
+putchar('0' + i);
+putchar('0' + j);
 putchar(' ');
-putchar(k);
-putchar(m);
-if (i + j + k + m <= 226)
+putchar('0' + k);
+putchar('0' + m);
+if (i + j + k + m < 35)
 {
 putchar(',');
 putchar(' ');
