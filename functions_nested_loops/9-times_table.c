@@ -17,6 +17,14 @@ _putchar('0' + sum % 10);
 if (j < 9)
 {
 _putchar(',');
+}
+if (sum < 10)
+{
+_putchar(' ');
+_putchar(' ');
+}
+else
+{
 _putchar(' ');
 }
 }
