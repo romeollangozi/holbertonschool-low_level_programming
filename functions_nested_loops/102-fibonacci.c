@@ -9,15 +9,15 @@
 int main(void)
 {
 int i;
-int a = 1;
-int b = 0;
-int t;
+long int a = 1;
+long int b = 0;
+long int t;
 for (i = 0; i <= 50; i++)
 {
 t = b;
 b = b + a;
 a = t;
-printf("%d\n");
+printf("%li\n", b);
 }
 
 
