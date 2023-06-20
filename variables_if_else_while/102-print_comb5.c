@@ -7,7 +7,7 @@
 int main(void)
 {
 
-int i, j, k, m, tk, tm;
+int i, j, k, m;
 
 for (i = 0; i < 10; i++)
 {
