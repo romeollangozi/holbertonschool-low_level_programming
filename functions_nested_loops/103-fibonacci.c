@@ -8,7 +8,6 @@
 
 int main(void)
 {
-int i;
 long int a = 1;
 long int b = 1;
 long int t;
