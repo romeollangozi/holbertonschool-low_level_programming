@@ -17,7 +17,10 @@ for (i = 0; i <= 50; i++)
 t = b;
 b = b + a;
 a = t;
-printf("%li\n", b);
+if (i != 50)
+printf("%li, ", b);
+else
+printf("%li", b);
 }
 printf("\n");
 return (0);
