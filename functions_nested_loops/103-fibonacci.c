@@ -16,6 +16,6 @@ j = i - j;
 if (i % 2 == 0)
 sum += i;
 }
-printf("%li \n", sum);
+printf("%li\n", sum);
 return (0);
 }
