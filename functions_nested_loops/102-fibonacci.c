@@ -19,7 +19,6 @@ b = b + a;
 a = t;
 printf("%li\n", b);
 }
-
-
+printf("\n");
 return (0);
 }
