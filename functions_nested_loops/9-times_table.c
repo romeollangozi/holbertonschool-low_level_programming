@@ -23,7 +23,7 @@ if (i * (j + 1) < 10 && j != 9)
 _putchar(' ');
 _putchar(' ');
 }
-else
+else if (j != 9)
 {
 _putchar(' ');
 }
