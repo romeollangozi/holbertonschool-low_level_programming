@@ -8,17 +8,13 @@
 
 int main(void)
 {
-long int a = 1;
-long int b = 1;
-long int t;
-long int sum;
-while (b <= 4000000)
+long int i = 1, j = 1, sum = 0;
+while (i < 4000000)
 {
-t = b;
-b = b + a;
-a = t;
-if (t % 2)
-sum = sum + t;
+i = i + j;
+j = i - j;
+if (i % 2 == 0)
+sum += i;
 }
 printf("%li \n", sum);
 return (0);
