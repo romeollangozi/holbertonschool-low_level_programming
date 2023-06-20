@@ -18,7 +18,7 @@ if (j < 9)
 {
 _putchar(',');
 }
-if (sum < 10)
+if (i * (j + 1) < 10)
 {
 _putchar(' ');
 _putchar(' ');
