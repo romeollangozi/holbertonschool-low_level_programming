@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _print_sign - it takes an argument c of value integer
+ * print_sign - it takes an argument c of value integer
  * @n: integer
  * Return: 1 and prints + if the number is greater than zero
  * returns 0 and prints 0 if the number is 0
@@ -16,7 +16,7 @@ return (1);
 else if (n == 0)
 {
 _putchar('0');
-return (1);
+return (0);
 }
 else
 {
