@@ -6,7 +6,7 @@
  * returns 0 and prints 0 if the number is 0
  * returns -1 and prints - if the numbers is less than zero
  */
-int _print_sign(int n)
+int print_sign(int n)
 {
 if (n > 0)
 {
