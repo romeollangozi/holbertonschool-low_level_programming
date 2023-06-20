@@ -18,7 +18,8 @@ for (k = 0; k < 10; k++)
 {
 for (m = 0; m < 10; m++)
 {
-if (i <= k && j < m)
+    
+if ((i <= k) && i + j < k + m)
 {
 putchar('0' + i);
 putchar('0' + j);
