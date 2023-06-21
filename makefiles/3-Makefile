@@ -13,7 +13,7 @@ oclean:
 fclean:
 	$(RM) -rf *~ *.tmp $(NAME) $(OBJ) 
 re:
-	$(RM) -r $(SRC) $(OBJ)
+	$(RM) -r *.o *.c
 	$(CC) $(OBJ) -o $(NAME)
 
 
