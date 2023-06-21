@@ -11,8 +11,7 @@ clean:
 oclean:
 	$(RM) -f $(OBJ)
 fclean:
-	$(RM) -f ~* *.tmp $(NAME) 
-	$(RM) $(OBJ)
+	$(RM) -rf *~
 re: $(SRC)
 	$(CC) $(OBJ) -o $(NAME)
 
