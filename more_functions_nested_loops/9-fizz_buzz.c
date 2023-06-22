@@ -22,9 +22,14 @@ int main(void)
 			printf("Fizz ");
 			continue;
 		}
-		if (i % 5 == 0)
+		if (i % 5 == 0 && i < 100)
 		{
 			printf("Buzz ");
+			continue;
+		}
+		if (i == 100)
+		{
+			printf("Buzz");
 			continue;
 		}
 		printf("%d ", i);
