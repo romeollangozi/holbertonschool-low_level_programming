@@ -20,6 +20,6 @@ int main(void)
 		else
 			f = f + 1;
 	}
-	printf("%i", f);
+	printf("%li", f);
 	return (0);
 }
