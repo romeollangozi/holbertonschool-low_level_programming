@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-	long int i;
 	long int n = 612852475143;
 	long int f = 2;
 
