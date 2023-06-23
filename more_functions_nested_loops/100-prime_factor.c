@@ -19,6 +19,6 @@ int main(void)
 		else
 			f = f + 1;
 	}
-	printf("%li", f);
+	printf("%li\n", f);
 	return (0);
 }
