@@ -5,14 +5,16 @@
  */
 void print_number(int n)
 {
-	int i, l = 1, t = n;
+	int l = 1;
+	int t = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		t = t * -1;
+		n = n * -1;
 	}
-	while (t > 10)
+	while (t > 9)
 	{
 		t = t / 10;
 		l = l * 10;
