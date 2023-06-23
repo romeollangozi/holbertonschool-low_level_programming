@@ -6,36 +6,27 @@
  */
 int main(void)
 {
+	int i, j;
 
-int i, j, k, m;
-
-for (i = 0; i < 10; i++)
-{
-for (j = 0; j < 10 ; j++)
-{
-
-for (k = 0; k < 10; k++)
-{
-for (m = 0; m < 10; m++)
-{
-    
-if (i <= k)
-{
-putchar('0' + i);
-putchar('0' + j);
-putchar(' ');
-putchar('0' + k);
-putchar('0' + m);
-if (i + j + k + m < 35)
-{
-putchar(',');
-putchar(' ');
-}
-}
-}
-}
-}
-}
-putchar('\n');
-return (0);
+	for (i = 0; i <= 99; i++)
+	{
+		for (j = 0; j <= 99; j++)
+		{
+			if (j > i)
+			{
+				putchar('0' + i / 10);
+				putchar('0' + i % 10);
+				putchar(' ');
+				putchar('0' + j / 10);
+				putchar('0' + j % 10);
+				if (i != 98)
+				{
+				putchar(',');
+				putchar(' ');
+				}
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
 }
