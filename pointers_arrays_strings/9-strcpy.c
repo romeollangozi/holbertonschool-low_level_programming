@@ -8,7 +8,7 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int length = strlen(src) + 1;
+	int length = strlen(src);
 	int i = 0;
 
 	while (i <= length)
