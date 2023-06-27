@@ -1,0 +1,28 @@
+#include "main.h"
+#include <string.h>
+/**
+ *_strncmp -  function that copies a string
+ *@s1: first string to be compared
+ *@s2: string to be compared with s1
+ *Return: returns an integer indicating the result of the
+ *comparison
+*/
+int _strcmp(char *s1, char *s2)
+{
+	int firstlength = strlen(s1);
+	int secondlength = strlen(s2);
+	int length = firstlength > secondlength ? firstlength : secondlength;
+	int diff = 0;
+	int i;
+	for(i = 0; i < length; i++)
+	{
+		if(i < firstlength && i < secondlength)
+			diff = s1[i] - s2[i];
+		else if(i < firstlength && i > secondlength)
+			diff -= s1[i];
+		else
+			diff += s2[i];
+	}
+
+	return diff;
+}
