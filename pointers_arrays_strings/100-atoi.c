@@ -13,6 +13,8 @@ int _atoi(char *s)
 	int length = strlen(s);
 	int number = 0;
 
+	if (length == 0)
+		return (0);
 	for (i = 0; i < length; i++)
 	{
 		if (s[i] == '-')
