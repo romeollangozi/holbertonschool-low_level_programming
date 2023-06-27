@@ -9,9 +9,11 @@
 char *cap_string(char *s)
 {
 	int length = strlen(s);
-	int i = 0;
+	int i;
 
-	for (i = 0; i < length; i++)
+	if (s[0] >= 97 && s[0] <= 122)
+		s[0] = s[0] - 32;
+	for (i = 1; i < length; i++)
 	{
 		if ((s[i] == ',' || s[i] == ' ' || s[i] == ';' || s[i] == '.' ||
 		s[i] == '!' || s[i] == '?' || s[i] == '"' ||
