@@ -10,7 +10,7 @@ int main(void)
 {
     int nb;
 
-    nb = _atoi("98");
+    nb = _atoi("Hello ----- world\n");
     printf("%d\n", nb);
     nb = _atoi("-402");
     printf("%d\n", nb);
