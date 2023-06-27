@@ -11,10 +11,8 @@ int _strcmp(char *s1, char *s2)
 {	
 	int i;
 
-	if (strlen(s1) > strlen(s2))
-		return (15);
-	else if (strlen(s2) > strlen(s1))
-		return (-15);
+	if (strlen(s1) != strlen(s2))
+		return (s1 - s2);
 	else
 	{
 		for(i = 0; i < (int) strlen(s1); i++)
