@@ -33,6 +33,9 @@ int _atoi(char *s)
 			}
 		}
 	}
+	if (start == 0 && end == 0)
+		return (0);
+
 	for (i = start; i <= end; i++)
 	{
 		number = number * 10 + (s[i] - '0');
