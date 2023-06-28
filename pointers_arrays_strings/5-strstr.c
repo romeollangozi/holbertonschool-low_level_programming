@@ -13,7 +13,7 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0;
 	int j = 0;
 	int found = 0;
-
+	int *res = NULL;
 	if ((int) strlen(needle) == 0)
 		return (haystack);
 
@@ -35,6 +35,6 @@ char *_strstr(char *haystack, char *needle)
 	if (found)
 		return (&haystack[j - i]);
 	else
-		return (NULL);
+		return (res);
 
 }
