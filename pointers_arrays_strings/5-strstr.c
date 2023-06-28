@@ -14,8 +14,8 @@ char *_strstr(char *haystack, char *needle)
 	int j = 0;
 	int found = 0;
 
-	if (needle == "")
-		return (&haystack);
+	if ((int) strlen(needle) == 0)
+		return (haystack);
 
 	for (; i < (int) strlen(needle); i++)
 	{
