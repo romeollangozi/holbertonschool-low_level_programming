@@ -4,9 +4,5 @@
 int main(void)
 {
 	srand(time(NULL));	
-	while(1)
-	printf("%d\n", rand());
-
-
-	return 0;
+	return rand();
 }
