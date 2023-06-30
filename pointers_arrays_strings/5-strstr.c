@@ -7,34 +7,28 @@
  * @needle: substring
  * Return: a pointer to the beginning of the located substring
  */
-
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0;
-	int j = 0;
-	int found = 0;
-	int *res = NULL;
-	if ((int) strlen(needle) == 0)
+	unsigned int i, j;
+	int boolean;
+
+	if (*needle == '\0')
 		return (haystack);
-
-	for (; i < (int) strlen(needle); i++)
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (; j < (int) strlen(haystack); j++)
+		boolean = 1;
+		if (haystack[i] == needle[0])
 		{
-			if (needle[i] == haystack[j])
-				{	found = 1;
-					j = j + 1;
-					break;
-				}
-			else
-				found = 0;
+			for (j = 1; needle[j] != '\0'; j++)
+			{
+				if (haystack[i + j] != needle[j])
+					boolean = 0;
+			}
 		}
-		if (!found)
-			i = 0;
+		else
+			boolean = 0;
+		if (boolean)
+			return (&haystack[i]);
 	}
-	if (found)
-		return (&haystack[j - i]);
-	else
-		return (res);
-
+	return (NULL);
 }
