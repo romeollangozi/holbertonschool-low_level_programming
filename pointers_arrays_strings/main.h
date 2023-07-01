@@ -28,3 +28,4 @@ char *_strstr(char *haystack, char *needle);
 void print_diagsums(int *a, int size);
 int keygen(void);
 char *rot13(char *);
+void print_number(int n);
