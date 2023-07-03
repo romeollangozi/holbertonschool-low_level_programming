@@ -2,11 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * _sqrt_recursion - returns the natural square root of a number.
+ * sqrtrec - function
  * @n: number
- * Return: square root
- * sqrtec - function
  * @root: root
+ * Return: n
  */
 int sqrtrec(int n, int root)
 {
@@ -15,8 +14,13 @@ int sqrtrec(int n, int root)
 	if (root == n / 2)
 	return (-1);
 	else
-	sqrtrec(n, root + 1);
+	return (sqrtrec(n, root + 1));
 }
+/**
+ * _sqrt_recursion - function
+ * @n: number
+ * Return: number
+ */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
