@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int money = atoi(argv[1]);
+	int money;
 	int sum = 0;
 	int coins[5] = {25, 10, 5, 2, 1};
 	int i;
@@ -19,8 +19,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	if (money < 0)
-		printf("Error\n");
+	money = atoi(argv[1]);
 	while (money > 0)
 	{
 		for (i = 0; i < 5; i++)
