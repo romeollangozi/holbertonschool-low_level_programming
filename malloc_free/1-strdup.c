@@ -8,7 +8,7 @@
  *Return: pointer to the string duplicated
  */
 char *_strdup(char *str)
-{	
+{
 	size_t len = strlen(str) + 1;
 	char *new = "";
 	int i = 0;
@@ -23,6 +23,7 @@ char *_strdup(char *str)
 		new[i] = str[i];
 		i++;
 	}
-
+	if (new == NULL)
+		return NULL;
 	return (new);
 }
