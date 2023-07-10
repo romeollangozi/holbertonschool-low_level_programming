@@ -13,7 +13,7 @@ void *malloc_checked(unsigned int b)
 
 	if (array == NULL)
 	{
-		exit(1);
+		exit(98);
 	}
 	return (array);
 }
