@@ -10,7 +10,7 @@
 char *_strdup(char *str)
 {
 	size_t len = strlen(str) + 1;
-	char *new = "";
+	char *new;
 	int i = 0;
 
 	if (str == NULL)
@@ -18,12 +18,8 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	new = malloc(len);
-	while (i <= (int)len)
-	{
-		new[i] = str[i];
-		i++;
-	}
 	if (new == NULL)
-		return NULL;
+		return (NULL);
+	strcpy(new,str);
 	return (new);
 }
