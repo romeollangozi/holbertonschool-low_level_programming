@@ -8,16 +8,16 @@
  *Return: pointer to the string duplicated
  */
 char *_strdup(char *str)
-{
-	size_t len = strlen(str);
-	char *new = malloc(len);
+{	
+	size_t len = strlen(str) + 1;
+	char *new = "";
 	int i = 0;
 
-	if (str == NULL || new == NULL || *str == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-
+	new = malloc(len);
 	while (i <= (int)len)
 	{
 		new[i] = str[i];
