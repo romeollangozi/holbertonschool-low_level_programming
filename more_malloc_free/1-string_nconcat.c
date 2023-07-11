@@ -34,7 +34,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strcpy(new, s1);
 	for (i = 0; i < (int) n; i++)
 	{
-		new[strlen(s1)+i] = s2[i];
+		new[strlen(s1) + i] = s2[i];
 	}
 	new[strlen(s1) + i] = '\0';
 	return (new);
