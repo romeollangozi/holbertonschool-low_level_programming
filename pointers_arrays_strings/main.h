@@ -29,3 +29,4 @@ void print_diagsums(int *a, int size);
 int keygen(void);
 char *rot13(char *);
 void print_number(int n);
+void set_string(char **s, char *to);
