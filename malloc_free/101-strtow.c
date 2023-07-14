@@ -14,10 +14,10 @@ char **strtow(char *str)
 	int k = 0, j = 0;
 	int wNum = 0;
 
-	if (str == NULL || !(strcmp(str, "")))
+	if (str == NULL || !(strcmp(str, "")) || !(strcmp(str, " ")))
 		return (NULL);
 	for (i = 0; i < (int) strlen(str); i++)
-		if (str[i] != ' ' && str[i + 1] == ' ')
+		if (str[i] != ' ' && (str[i + 1] == ' ' || i + 1 == (int) strlen(str)))
 			wNum++;
 	array = malloc(sizeof(char *) * (wNum + 1));
 	if (array == NULL)
@@ -35,7 +35,7 @@ char **strtow(char *str)
 		{
 			array[j][k] = str[i];
 			k++;
-			if (str[i + 1] == ' ')
+			if (str[i + 1] == ' ' || (i + 1) == (int) strlen(str))
 			{
 				array[j][k] = '\0';
 				j++;
