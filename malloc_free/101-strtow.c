@@ -19,6 +19,8 @@ char **strtow(char *str)
 	for (i = 0; i < (int) strlen(str); i++)
 		if (str[i] != ' ' && (str[i + 1] == ' ' || i + 1 == (int) strlen(str)))
 			wNum++;
+	if (wNum == 0)
+		return (NULL);
 	array = malloc(sizeof(char *) * (wNum + 1));
 	if (array == NULL)
 		return (NULL);
