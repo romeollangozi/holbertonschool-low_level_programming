@@ -19,3 +19,4 @@ Some of the basics we have in this project are :
 * Pointers, Arrays and Strings
 We check our code with betty-style using betty < filename >.
 We will see each of the topics in each document more closely.
+Readme
