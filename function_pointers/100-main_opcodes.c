@@ -7,7 +7,7 @@
 void printOpcode(int numBytes)
 {
 	void (*func)() = printOpcode;
-	unsigned char *opcode = (unsigned char)*func;
+	unsigned char *opcode = (unsigned char *)func;
 	int i = 0;
 
 	for (i = 0; i < numBytes; i++)
