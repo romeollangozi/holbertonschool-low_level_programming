@@ -18,12 +18,12 @@ int main(int argc, char *argv[])
 	printf("Error\n");
 	exit(1);
 	}
+	numBytes = atoi(argv[1]);
 	if (numBytes <= 0)
 	{
 	printf("Error\n");
 	exit(2);
 	}
-	numBytes = atoi(argv[1]);
 	for (i = 0; i < numBytes; i++)
 		printf("%02x ", opcode[i]);
 	printf("\n");
