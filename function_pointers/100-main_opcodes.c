@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	}
 	if (numBytes <= 0)
 	{
-	printf("Error\n", argv[1]);
+	printf("Error\n");
 	exit (2);
 	}
 
