@@ -28,13 +28,13 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-	printf("Usage: ./program_name <num_bytes>\n");
-	return (1);
+	printf("Error\n");
+	exit (1);
 	}
 	if (numBytes <= 0)
 	{
-	printf("Invalid number of bytes: %s\n", argv[1]);
-	return (1);
+	printf("Error\n", argv[1]);
+	exit (2);
 	}
 
 	printOpcode(numBytes);
