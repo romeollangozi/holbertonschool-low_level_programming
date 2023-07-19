@@ -1,5 +1,5 @@
 	SECTION .data		; data section
-msg:	db "Hello World",10	; the string to print, 10=cr
+msg:	db "Hello, World",10	; the string to print, 10=cr
 len:	equ $-msg		; "$" means "here"
 				; len is a value, not an address
 
