@@ -11,10 +11,10 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *t;
 	char *separator = ", ";
-	int length = (int) strlen(format);
+	int length = strlen(format);
 
 	va_start(args, format);
-	while (i <= length - 1)
+	while (format[i] != '\0')
 	{
 		if (i == length - 1)
 			separator = "";
@@ -24,29 +24,24 @@ void print_all(const char * const format, ...)
 				t = va_arg(args, char *);
 				if (t != NULL)
 				{
-					printf("%s%s", t, separator);
-					i++;
+					printf("%s%s", t, i == length - 1 ? "" : separator);
 					break;
 				}
 					printf("(nil)%s", separator);
-					i++;
 					break;
 			case 'i':
 				printf("%d%s", va_arg(args, int), separator);
-				i++;
 				break;
 			case 'f':
 				printf("%f%s", va_arg(args, double), separator);
-				i++;
 				break;
 			case 'c':
 				printf("%c%s", va_arg(args, int), separator);
-				i++;
 				break;
 			default:
-				i++;
 				break;
 		}
+		i++;
 	}
 		printf("\n");
 }
