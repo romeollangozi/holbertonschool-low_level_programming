@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	exit(2);
 	}
 	for (i = 0; i < numBytes; i++)
-	{	
+	{
 		if (i != 0)
 			printf(" ");
 		printf("%02x", opcode[i]);
