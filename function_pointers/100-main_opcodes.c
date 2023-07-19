@@ -9,8 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int numBytes;
-	int (*func)(int, char **) = main;
-	unsigned char *opcode = (unsigned char *)func;
+	unsigned char *opcode = (unsigned char *)main;
 	int i = 0;
 
 	if (argc != 2)
@@ -25,7 +24,11 @@ int main(int argc, char *argv[])
 	exit(2);
 	}
 	for (i = 0; i < numBytes; i++)
-		printf("%02x ", opcode[i]);
+	{	
+		if (i != 0)
+			printf(" ");
+		printf("%02x", opcode[i]);
+	}
 	printf("\n");
 	return (0);
 }
