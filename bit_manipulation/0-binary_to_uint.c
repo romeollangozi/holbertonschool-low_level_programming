@@ -2,22 +2,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-
-/**
- * _pow - function that returns a number to power n
- *@base: the base of the number
- *@power: power
- *Return: number to the power n
- */
-
-unsigned int _pow(unsigned int base, unsigned int power)
-{
-	if (power == 0)
-		return (1);
-	else
-		return (base * (_pow(base, power - 1)));
-}
-
 /**
  *binary_to_uint - function that converts a binary to an unsigned int
  *@b: binary
@@ -41,7 +25,7 @@ unsigned int binary_to_uint(const char *b)
 
 		if (b[i] == '1')
 		{
-			decimal += _pow(2, length);
+			decimal += 1 << length;
 		}
 		length--;
 		i++;
