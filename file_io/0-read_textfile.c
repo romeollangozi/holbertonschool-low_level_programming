@@ -26,7 +26,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	n = read(f1, buffer, letters);
 	c = write(1, buffer, n);
 	if (c == -1 || c != n)
+	{
+		close(f1);
 		return (0);
+	}
 
+	close(f1);
 	return (n);
 }
