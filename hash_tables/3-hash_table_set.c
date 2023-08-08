@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *newNode = malloc(sizeof(hash_node_t));
 	int found = 0;
 
-	if (newNode == NULL || key == NULL || value == NULL)
+	if (ht == NULL || newNode == NULL || key == NULL || value == NULL)
 		return (0);
 	nKey = strdup(key);
 	nValue = strdup(value);
