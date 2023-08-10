@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdint.h>
 /**
  * union type - s
  *@u8: s
