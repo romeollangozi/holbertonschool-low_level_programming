@@ -59,6 +59,53 @@ int skey_exists(shash_table_t *ht, unsigned long int index, const char *key)
 
 }
 /**
+ * sort_shnode - sort shnode
+ *@ht: table
+ *@new: node to be sorted
+ */
+void sort_shnode(shash_table_t *ht, shash_node_t *new)
+{
+	shash_node_t *it;
+	shash_node_t *temp;
+
+	if (ht->shead == NULL)
+	{
+		ht->shead = new;
+		ht->stail = new;
+	}
+	else
+	{
+		if (strcmp(ht->shead->key, new->key) >= 0)
+		{
+			temp = ht->shead;
+			new->snext = temp;
+			temp->sprev = new;
+			ht->shead = new;
+			return;
+		}
+		it = ht->shead;
+		while (it != NULL)
+		{
+			if (strcmp(it->key, new->key) >= 0)
+			{
+				new->snext = it;
+				new->sprev = it->sprev;
+				it->sprev->snext = new;
+				it->sprev = new;
+				return;
+			}
+			it = it->snext;
+		}
+		if (strcmp(ht->stail->key, new->key) <= 0)
+		{
+			temp = ht->stail;
+			new->sprev = temp;
+			temp->snext = new;
+			ht->stail = new;
+		}
+	}
+}
+/**
  *shash_table_set - function that adds an element to the hash table
  *@ht: hash table
  *@key: key value to the hash node
@@ -67,19 +114,15 @@ int skey_exists(shash_table_t *ht, unsigned long int index, const char *key)
  */
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
-{	
+{
 	unsigned long int index;
-	shash_node_t *it;
-	shash_node_t *temp;
-	shash_node_t *new;
+	shash_node_t *it, *temp, *new;
 	int n;
 
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
-
 	index = key_index((unsigned char *) key, ht->size);
 	n = skey_exists(ht, index, key);
-	
 	if (n == 1)
 	{
 		free(ht->array[index]->value);
@@ -97,13 +140,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		it->value = strdup(value);
 		return (1);
 	}
-	
 	new = create_snode(key, value);
-	
 	if (new == NULL)
 		return (0);
-
-
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = new;
@@ -114,51 +153,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		new->next = temp;
 		ht->array[index] = new;
 	}
-
-	if (ht->shead == NULL)
-	{
-		ht->shead = new;
-		ht->stail = new;
-		return (1);
-	}
-	else
-	{
-		if (strcmp(ht->shead->key, key) >= 0)
-		{
-			temp = ht->shead;
-			new->snext = temp;
-			temp->sprev = new;
-			ht->shead = new;
-			return (1);
-		}
-		
-		it = ht->shead;
-
-		while (it != NULL)
-		{
-			if (strcmp(it->key, key) >= 0)
-			{
-				new->snext = it;
-				new->sprev = it->sprev;
-				it->sprev->snext = new;
-				it->sprev = new;
-				return (1);
-			}
-			it = it->snext;
-		}
-		if (strcmp(ht->stail->key, key) <=0)
-		{
-			temp = ht->stail;
-			new->sprev = temp;
-			temp->snext = new;
-			ht->stail = new;
-			return (1);
-		}
-	}
-
-
+	sort_shnode(ht, new);
 	return (1);
-
 }
 
 /**
@@ -281,7 +277,8 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print_rev - function that prints in rev all hash table keys and pairs
+ * shash_table_print_rev - function that prints in
+ * rev all hash table keys and pairs
  *@ht: hash table to be printed
  */
 
